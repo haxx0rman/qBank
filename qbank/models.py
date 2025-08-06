@@ -39,6 +39,7 @@ class Question:
     """Represents a single question with multiple choice answers"""
     question_text: str
     answers: List[Answer]
+    objective: Optional[str] = None  # What the question is testing for
     tags: Set[str] = field(default_factory=set)
     elo_rating: float = 1200.0  # Starting ELO rating
     times_answered: int = 0
@@ -249,6 +250,7 @@ class QuestionBank:
             "questions": {qid: {
                 "id": q.id,
                 "question_text": q.question_text,
+                "objective": q.objective,
                 "answers": [{
                     "id": a.id,
                     "text": a.text,
@@ -306,6 +308,7 @@ class QuestionBank:
                 id=q_data["id"],
                 question_text=q_data["question_text"],
                 answers=answers,
+                objective=q_data.get("objective"),
                 tags=set(q_data["tags"]),
                 elo_rating=q_data["elo_rating"],
                 times_answered=q_data["times_answered"],

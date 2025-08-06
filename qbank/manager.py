@@ -35,6 +35,7 @@ class QuestionBankManager:
     # Question Management
     def add_question(self, question_text: str, correct_answer: str, 
                     incorrect_answers: List[str], tags: Optional[Set[str]] = None,
+                    objective: Optional[str] = None,
                     explanations: Optional[Dict[str, str]] = None) -> Question:
         """
         Add a new question to the bank.
@@ -44,6 +45,7 @@ class QuestionBankManager:
             correct_answer: The correct answer text
             incorrect_answers: List of incorrect answer texts
             tags: Set of tags for categorizing the question
+            objective: What the question is testing for
             explanations: Optional explanations for answers (answer_text -> explanation)
             
         Returns:
@@ -76,6 +78,7 @@ class QuestionBankManager:
         question = Question(
             question_text=question_text,
             answers=answers,
+            objective=objective,
             tags=tags or set()
         )
         
@@ -314,7 +317,8 @@ class QuestionBankManager:
     def create_multiple_choice_question(self, question_text: str, 
                                       correct_answer: str,
                                       wrong_answers: List[str],
-                                      tags: Optional[List[str]] = None) -> Question:
+                                      tags: Optional[List[str]] = None,
+                                      objective: Optional[str] = None) -> Question:
         """
         Convenience method to create a multiple choice question.
         
@@ -323,12 +327,15 @@ class QuestionBankManager:
             correct_answer: The correct answer
             wrong_answers: List of incorrect answers
             tags: List of tags to assign to the question
+            objective: What the question is testing for
             
         Returns:
             The created Question object
         """
         tag_set = set(tags) if tags else set()
-        return self.add_question(question_text, correct_answer, wrong_answers, tag_set)
+        return self.add_question(
+            question_text, correct_answer, wrong_answers, tag_set, objective
+        )
     
     def bulk_add_questions(self, questions_data: List[Dict]) -> List[Question]:
         """
@@ -336,8 +343,8 @@ class QuestionBankManager:
         
         Args:
             questions_data: List of dictionaries with question data.
-                          Each dict should have: question, correct_answer, 
-                          wrong_answers, tags (optional)
+                          Each dict should have: question, correct_answer,
+                          wrong_answers, tags (optional), objective (optional)
                           
         Returns:
             List of created Question objects
@@ -349,7 +356,8 @@ class QuestionBankManager:
                 question_text=q_data["question"],
                 correct_answer=q_data["correct_answer"],
                 wrong_answers=q_data["wrong_answers"],
-                tags=q_data.get("tags", [])
+                tags=q_data.get("tags", []),
+                objective=q_data.get("objective")
             )
             created_questions.append(question)
         

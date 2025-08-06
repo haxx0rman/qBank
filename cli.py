@@ -37,9 +37,12 @@ def create_question_interactive(manager: QuestionBankManager):
     tags_input = input("\nEnter tags (comma-separated, optional): ").strip()
     tags = [tag.strip() for tag in tags_input.split(",") if tag.strip()] if tags_input else []
     
+    objective = input("\nEnter learning objective (what this question tests, optional): ").strip()
+    objective = objective if objective else None
+    
     # Create the question
     question = manager.create_multiple_choice_question(
-        question_text, correct_answer, wrong_answers, tags
+        question_text, correct_answer, wrong_answers, tags, objective
     )
     
     print(f"\n✓ Question created successfully! ID: {question.id}")
@@ -60,6 +63,8 @@ def list_questions(manager: QuestionBankManager):
     for i, question in enumerate(questions, 1):
         print(f"{i}. {question.question_text}")
         print(f"   Correct: {question.correct_answer.text if question.correct_answer else 'N/A'}")
+        if question.objective:
+            print(f"   Objective: {question.objective}")
         print(f"   Tags: {', '.join(question.tags) if question.tags else 'None'}")
         print(f"   Difficulty: {manager.elo_system.get_difficulty_category(question.elo_rating)}")
         print(f"   Accuracy: {question.accuracy:.1f}% ({question.times_correct}/{question.times_answered})")

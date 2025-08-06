@@ -15,31 +15,36 @@ def create_sample_questions(manager: QuestionBankManager):
             "question": "What is the capital of France?",
             "correct_answer": "Paris",
             "wrong_answers": ["London", "Berlin", "Madrid"],
-            "tags": ["geography", "europe", "capitals"]
+            "tags": ["geography", "europe", "capitals"],
+            "objective": "Test knowledge of European capital cities"
         },
         {
             "question": "What is 2 + 2?",
             "correct_answer": "4",
             "wrong_answers": ["3", "5", "6"],
-            "tags": ["math", "arithmetic", "basic"]
+            "tags": ["math", "arithmetic", "basic"],
+            "objective": "Assess basic arithmetic skills"
         },
         {
             "question": "Who wrote 'Romeo and Juliet'?",
             "correct_answer": "William Shakespeare",
             "wrong_answers": ["Charles Dickens", "Jane Austen", "Mark Twain"],
-            "tags": ["literature", "shakespeare", "plays"]
+            "tags": ["literature", "shakespeare", "plays"],
+            "objective": "Evaluate knowledge of classic English literature authors"
         },
         {
             "question": "What is the largest planet in our solar system?",
             "correct_answer": "Jupiter",
             "wrong_answers": ["Saturn", "Earth", "Mars"],
-            "tags": ["science", "astronomy", "planets"]
+            "tags": ["science", "astronomy", "planets"],
+            "objective": "Test understanding of planetary characteristics"
         },
         {
             "question": "In Python, which keyword is used to create a function?",
             "correct_answer": "def",
             "wrong_answers": ["function", "create", "make"],
-            "tags": ["programming", "python", "syntax"]
+            "tags": ["programming", "python", "syntax"],
+            "objective": "Assess knowledge of Python function definition syntax"
         }
     ]
     

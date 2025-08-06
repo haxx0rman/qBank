@@ -11,6 +11,7 @@ A comprehensive question bank system with spaced repetition learning (similar to
 
 ### 📚 **Question Management**
 - Multiple choice questions with explanations
+- Learning objectives tracking (what each question tests)
 - Tagging system for organizing questions by topic
 - Full-text search across questions and answers
 - Import/export functionality (JSON format)
@@ -56,7 +57,8 @@ question = manager.create_multiple_choice_question(
     question_text="What is the capital of France?",
     correct_answer="Paris",
     wrong_answers=["London", "Berlin", "Madrid"],
-    tags=["geography", "europe"]
+    tags=["geography", "europe"],
+    objective="Test knowledge of European capital cities"
 )
 
 # Start a study session
@@ -150,6 +152,7 @@ This will create sample questions and demonstrate a complete study session with 
 {
   "id": "uuid",
   "question_text": "What is 2 + 2?",
+  "objective": "Assess basic arithmetic skills",
   "answers": [
     {
       "id": "uuid",
