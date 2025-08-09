@@ -1,50 +1,88 @@
-# QBank - Spaced Repetition Question Bank System
+# QBank - Advanced Spaced Repetition Learning System
 
-A comprehensive question bank system with spaced repetition learning (similar to Anki) and ELO-based difficulty rating. Perfect for studying any subject with adaptive difficulty and intelligent review scheduling.
+A comprehensive, adaptive question bank system with spaced repetition learning, ELO-based difficulty rating, multiple question types, advanced analytics, curriculum management, and both CLI and web interfaces. Perfect for studying any subject with intelligent review scheduling and progress tracking.
 
-## Features
+## 🚀 Features
 
 ### 🧠 **Smart Learning System**
-- **Spaced Repetition**: Questions are scheduled for review based on the SM-2 algorithm
-- **ELO Rating System**: Questions have difficulty ratings that adjust based on user performance
-- **Adaptive Learning**: The system recommends questions based on your skill level
+- **Spaced Repetition**: Questions scheduled using the SM-2 algorithm for optimal retention
+- **ELO Rating System**: Dynamic difficulty adjustment based on performance
+- **Adaptive Learning**: AI-powered question recommendations based on skill level
+- **Advanced Analytics**: Comprehensive learning metrics and progress prediction
+- **Curriculum Management**: Structured learning paths with prerequisites and milestones
 
 ### 📚 **Question Management**
-- Multiple choice questions with explanations
-- Learning objectives tracking (what each question tests)
-- Tagging system for organizing questions by topic
-- Full-text search across questions and answers
-- Import/export functionality (JSON format)
+- **Multiple Question Types**: Multiple choice, fill-in-the-blank, matching, ordering, short answer
+- **Bulk Import**: CSV import with automatic question processing
+- **Smart Search**: Full-text search across questions, answers, and tags
+- **Learning Objectives**: Track what each question tests
+- **Tagging System**: Flexible organization by topic, difficulty, or custom categories
 
-### 📊 **Progress Tracking**
-- User skill ratings (like chess ELO)
-- Detailed accuracy statistics per question
-- Study session history and analytics
-- Review forecasting for upcoming sessions
+### 📊 **Progress Tracking & Analytics**
+- **User Skill Ratings**: ELO-based progression tracking
+- **Detailed Statistics**: Accuracy, response times, learning trends
+- **Performance Prediction**: Forecast future performance and readiness
+- **Study Recommendations**: AI-powered suggestions for optimal learning
+- **Session Analytics**: Comprehensive study session insights
 
-### 🎯 **Study Sessions**
-- Interactive study sessions with immediate feedback
-- Customizable session length and difficulty
-- Skip functionality for questions you're not ready for
-- Real-time rating updates
+### 🎯 **Study Interfaces**
+- **Command Line Interface**: Full-featured CLI with practice modes and statistics
+- **Web Interface**: Modern, responsive web application
+- **Interactive Sessions**: Real-time feedback and adaptive difficulty
+- **Subject Filtering**: Focus on specific topics or learning objectives
 
-## Installation
+## 📦 Installation
 
 ```bash
 # Clone the repository
 git clone <your-repo-url>
 cd qBank
 
-# Install dependencies (if using uv)
+# Install dependencies using uv (recommended)
 uv sync
 
-# Or install in development mode
+# Or install in development mode with pip
 pip install -e .
 ```
 
-## Quick Start
+## 🚀 Quick Start
 
-### Using the Python API
+### Command Line Interface
+
+```bash
+# Start with bulk import of questions
+uv run cli.py import sample_questions.csv
+
+# Practice questions by subject
+uv run cli.py practice --subject math
+
+# Search for specific questions
+uv run cli.py search "capital"
+
+# View detailed statistics
+uv run cli.py detailed-stats
+
+# Start a regular study session
+uv run cli.py study
+
+# View all questions
+uv run cli.py list
+
+# Export your progress
+uv run cli.py export my_backup.json
+```
+
+### Web Interface
+
+```bash
+# Start the web server
+uv run python -m qbank.web_interface
+
+# Open your browser to http://localhost:5000
+# Enjoy the modern, responsive study interface!
+```
+
+### Python API
 
 ```python
 from qbank import QuestionBankManager

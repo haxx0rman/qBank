@@ -1,0 +1,11 @@
+question,correct_answer,wrong_answer1,wrong_answer2,wrong_answer3,tags,objective
+"What is the capital of France?","Paris","London","Berlin","Madrid","geography,europe,capitals","Test knowledge of European capitals"
+"What is 2 + 2?","4","3","5","6","math,arithmetic,basic","Test basic arithmetic skills"
+"Who wrote Romeo and Juliet?","William Shakespeare","Charles Dickens","Jane Austen","Mark Twain","literature,shakespeare,drama","Test knowledge of famous authors"
+"What is the largest planet in our solar system?","Jupiter","Saturn","Neptune","Earth","science,astronomy,planets","Test knowledge of solar system"
+"What does HTML stand for?","HyperText Markup Language","Home Tool Markup Language","Hyperlinks and Text Markup Language","High Tech Modern Language","programming,web,html","Test web development knowledge"
+"In Python, what keyword is used to define a function?","def","function","define","func","programming,python,syntax","Test Python syntax knowledge"
+"What is the chemical symbol for gold?","Au","Go","Ag","Gd","science,chemistry,elements","Test knowledge of chemical elements"
+"Which data structure follows LIFO principle?","Stack","Queue","Array","Tree","programming,data-structures,algorithms","Test data structure concepts"
+"What year did World War II end?","1945","1944","1946","1943","history,world-war,20th-century","Test historical knowledge"
+"What is the square root of 64?","8","6","10","7","math,algebra,square-roots","Test mathematical calculations"
